@@ -1,0 +1,16 @@
+-GraphQL is a Query Language
+-Alternative to RESTAPI
+
+
+Drawbacks of REST API
+-Overfetching : Getting more data than we need
+-Underfetching: Getting back less data than we need
+
+
+Query {
+    courses {
+        id,
+        title,
+        thumbnail_url
+    }
+}
