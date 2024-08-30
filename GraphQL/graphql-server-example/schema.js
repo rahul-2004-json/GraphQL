@@ -1,7 +1,6 @@
-# This defines how the graph should look like
 export const typeDefs = `#graphql
     type Game{
-        id:ID!   # ! this means required
+        id:ID!
         title:String!
         platform:[String!]!
     }
@@ -15,21 +14,12 @@ export const typeDefs = `#graphql
         name:String!
         verified: Boolean!
     }
-    # This is the entry point for querying the data
-    """
-    Query is the starting point of any GraphQL query.
-    When a client sends a query, it begins at the Query type, specifying which fields it wants and how it wants them. 
-    This type acts as the root of the query tree.
-    """
     type Query{
-        reviews:[Reviews]
+        reviews:[Review]
+        review(id: ID!): Review
         games:[Game]
+        game(id: ID!): Game
         authors:[Author]
+        author(id : ID!): Author
     }
 `
-
-
-# Five Scalar data types that we can use 
-"""
-int , float , string, boolean, ID
-"""
